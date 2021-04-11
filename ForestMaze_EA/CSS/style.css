@@ -1,0 +1,44 @@
+body{
+	max-width: 482px;
+	margin: 60px auto;
+	background-image: url("../Images/forest.png");
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+@font-face{
+	font-family:fontimport;
+	src:url("../Font/font.ttf");
+}
+
+#demoFont {
+	font-family: fontimport;
+	font-size: 45px;
+	color: #ffffff;
+}
+
+#wrap{
+	margin: 0 auto;
+	max-width: 482px;
+	margin: auto;
+	background-image: url("../Images/house1.png");
+}
+#main{
+	margin: 0 auto;
+	background-image: url("../Images/maze.png");
+	margin: 30px auto;
+	max-width: 482px;
+}
+#house{
+	margin: 20 113;
+	max-height: 130px;
+	float: left;
+}
+#char{
+	margin: 183 0 0 150;
+}
+#char2{
+	margin: 183 0 0 245;
+}
+#char3{
+	margin: 183 0 0 340;
+}

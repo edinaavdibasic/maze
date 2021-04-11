@@ -1,0 +1,17 @@
+					function char(){
+						if(turn==3){
+							return;
+							<!--document.getElementById("char").style.visibility = "hidden";
+							document.getElementById("char").style.visibility = "hidden";
+							document.getElementById("char").style.visibility = "hidden";-->
+						}
+						if(turn==1){
+							document.getElementById("char").style.visibility = "visible";
+						}
+						if(turn==2){
+							document.getElementById("char2").style.visibility = "visible";
+						}
+						if(turn==3){
+							document.getElementById("char3").style.visibility = "visible";
+						}
+					}

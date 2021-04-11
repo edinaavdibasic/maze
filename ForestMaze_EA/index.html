@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>MAZE</title>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+	</head>
+	<body>
+		<div wrap style="position: relative;" align="center">
+			<div id="demoFont">FOREST MAZE</div>
+			<div id="main" style="position: absolute;">
+			<canvas width="482" height="482" id="canvas" ></canvas>
+
+				<script>
+					var tx=0;
+					var ty=0;
+					var x=226;
+					var y=0;
+					var n=0;
+					var turn=0;
+					var width = 40;
+					var height = 28;
+					var frames = 3;
+
+					currentFrame = 0;
+					image = new Image()
+					image.src=('../Images/sprite');
+					
+					var loc=[226,2,226,18,210,18,210,50,226,50,226,98,210,98,210,114,194,114,194,82,180,82,178,94,178,114,178,130,178,146,168,146,154,146,146,146,146,162,196,162,194,130,210,130,210,146,226,146,226,114,242,114,242,130,260,130,258,82,242,82,242,50,274,50,274,130,370,130,370,162,402,162,402,194,418,194,418,178,434,178,434,194,450,194,450,210,434,210,434,226,466,226,466,354,450,354,450,258,434,258,434,274,418,274,418,290,402,290,402,306,418,306,418,338,434,338,434,354,418,354,418,370,466,370,466,402,434,402,434,418,450,418,450,434,434,434,434,466,386,466,386,450,322,450,322,418,338,418,338,434,354,434,354,402,258,402,258,354,242,354,242,338,258,338,258,322,226,322,226,338,162,338,162,322,146,322,146,354,162,354,162,370,146,370,146,386,162,386,162,402,178,402,178,434,194,434,194,450,210,450,210,466,226,466,226,450,242,450,242,466];
+					
+					function drawIt() {
+						tx = loc[n];
+						ty = loc[n+1];
+						var xr=tx-x;
+						var yr=ty-y;
+							var canvas=document.getElementById('canvas');
+							var ctx=canvas.getContext('2d');
+							ctx.clearRect(0,0,canvas.width,canvas.height);
+							ctx.fillStyle="#00FF00";
+							ctx.fillRect(x,y,14,14);
+							//ctx.drawImage(image, 0, height*currentFrame, width, height, 0, 0, width, height);
+							//cxt.beginPath();
+						if(x!=tx||y!=ty){
+							if(xr>0){x+=1;}
+							else if(xr==0){}
+							else{x-=1;}
+							if(yr>0){y+=1;}
+							else if(yr==0){}
+							else{y-=1;}
+						}else{n+=2; 
+							if(x==242&&y==466){x=226;y=0;n=0;turn++;}
+						}
+						
+						if (currentFrame == frames) {
+							currentFrame = 0;
+						} else {
+							currentFrame++;
+						}
+					}
+					setInterval(drawIt, 8);
+					//cxt.closePath();
+				</script>
+			<div id="house" style="position: absolute;">
+				<img src="Images/house.png" alt="" height="200px">
+			</div>
+			
+			<div id="char" style="position: absolute;">
+				<img src="Images/char.png" alt="" height="32px">
+			</div>
+			<div id="char2" style="position: absolute;">
+				<img src="Images/char2.png" alt="" height="32px">
+			</div>
+			<div id="char3" style="position: absolute;">
+				<img src="Images/char3.png" alt="" height="32px">
+			</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
